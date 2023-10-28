@@ -1,35 +1,18 @@
 import React from "react";
 
-import Image from "next/image";
-
+import BG from "@/components/Global/BG";
 import { Button } from "@nextui-org/react";
 
 export default function LeftCard({ src }: { src: string }) {
   return (
     <div className="w-full group relative  cursor-grab">
-      <div className="w-full h-[450px] rounded-xl relative overflow-hidden">
-        <Image
-          className=" group-hover:scale-[1.07]"
-          alt={"Slide-Card"}
-          src={src}
-          placeholder="blur"
-          quality={100}
-          fill
-          blurDataURL={src}
-          sizes="100vw"
-          style={{
-            objectFit: "cover",
-            transition: "all ease-in-out .3s",
-            transformOrigin: "center",
-          }}
-        />
-      </div>
-      <div className="absolute flex flex-col gap-[20px] top-0 left-0 p-[50px]">
+      <BG src={src} />
+      <div className="absolute flex  flex-col gap-[20px] top-0 left-0 p-[20px] sm:p-[50px]">
         <span>EmpowerHer Suits</span>
-        <h1 className="font-[700] text-[3rem] leading-[42px]">
+        <h1 className="font-[700] text-[1.6rem] sm:text-[3rem] leading-[27px] sm:leading-[42px]">
           Classic Elegance <br /> for Women
         </h1>
-        <p>
+        <p className="hidden sm:block">
           Naming a collection of women's suit jackets <br /> can help convey the
           style and identity of your brand.
         </p>

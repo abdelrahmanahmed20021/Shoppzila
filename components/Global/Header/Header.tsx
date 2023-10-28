@@ -23,17 +23,26 @@ import { routes } from "./routes";
 export default function Header() {
   const path = usePathname();
   return (
-    <Navbar className="shadow-sm" isBlurred maxWidth="xl">
-      <NavbarContent className="sm:hidden" justify="center">
+    <Navbar
+      className="shadow-sm "
+      classNames={{
+        wrapper: "lg:max-w-[75%] md:max-w-[100%]",
+      }}
+      isBlurred
+      maxWidth="full"
+    >
+      <NavbarContent className="lg:hidden" justify="center">
         <NavbarMenuToggle />
       </NavbarContent>
 
-      <NavbarBrand>
-        <Logo />
-      </NavbarBrand>
+      <NavbarContent className="w-full md:flex-1" justify="center">
+        <NavbarBrand className="w-full justify-center md:justify-start flex">
+          <Logo />
+        </NavbarBrand>
+      </NavbarContent>
 
       <NavbarContent
-        className="hidden  sm:flex  w-[80%] gap-[50px]"
+        className="hidden  lg:flex  lg:w-[80%] gap-[50px]"
         justify="center"
       >
         {routes.map((link) => (
@@ -52,7 +61,7 @@ export default function Header() {
       </NavbarContent>
 
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
+        <NavbarItem className="flex">
           <Cart />
         </NavbarItem>
       </NavbarContent>
