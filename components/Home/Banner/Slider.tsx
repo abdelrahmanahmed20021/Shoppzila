@@ -9,8 +9,9 @@ import LeftCard from "./LeftCard";
 
 export default function Slider() {
   return (
-    <div className="w-[65%] cursor-pointer">
+    <div className="lg:w-[65%] w-full cursor-pointer">
       <Swiper
+        loop={true}
         pagination={{
           dynamicBullets: true,
           clickable: true,

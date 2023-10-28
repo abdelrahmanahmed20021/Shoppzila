@@ -17,10 +17,10 @@
 
   --error-color-900: rgb(250, 67, 67);
 
-  --primary-color-900: #a06ad5;
+  --primary-color-900: #a2745c;
 
   --light-color-900: #fff;
-  --light-color-800: #979797;
+  --light-color-800: #f0eeed;
   --light-color-700: #ffffff93;
   --light-color-600: #f2f1fa;
   --light-color-500: #f9fafb;
@@ -31,7 +31,9 @@
   --error-color-900: #9b1c1c;
   --error-color-800: #fbd5d5;
 }
-
+body {
+  height: 10000px;
+}
 /*? -------------------------------------------------------------------------- */
 /*?                                Global                                      */
 /*? -------------------------------------------------------------------------- */

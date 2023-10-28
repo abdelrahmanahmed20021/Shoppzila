@@ -1,8 +1,6 @@
 import axios from "axios";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 
-const queryClient = useQueryClient();
-
 export const useAxios = axios.create({
   baseURL: "",
   headers: {
@@ -27,7 +25,7 @@ export const useGetter = ({
     retry: reFaildTime,
     queryFn: async () => {
       const req = await useAxios.get(endPoint);
-      const { data } = await req.data;
+      const data = await req.data;
       return data;
     },
   });
@@ -36,22 +34,23 @@ export const useSetter = ({
   endPoint,
   key,
   reFaildTime,
-  data,
 }: {
   endPoint: string;
   key: string;
   reFaildTime?: number;
-  data: any;
-}) =>
-  useMutation({
+}) => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
     mutationKey: [key],
     retry: reFaildTime,
-    mutationFn: async () => {
-      return useAxios.get(endPoint);
+    mutationFn: async (data: any) => {
+      return useAxios.post(endPoint, data);
     },
-    onSuccess: (res: any) => {
+    onSuccess: (res) => {
       const { data } = res;
-      queryClient.invalidateQueries([key]);
+      queryClient.invalidateQueries({ queryKey: [key] });
       return data;
     },
   });
+};
