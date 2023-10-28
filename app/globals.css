@@ -2,26 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+/*? -------------------------------------------------------------------------- */
+/*?                                Global                                      */
+/*? -------------------------------------------------------------------------- */
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --main-color-900: #ffa458;
+  --main-color-400: rgba(247, 190, 143, 0.712);
+
+  --dark-color-900: #000;
+  --dark-color-700: #0a0c22;
+  --dark-color-800: #58646d;
+  --dark-color-400: #b3acac8f;
+
+  --error-color-900: rgb(250, 67, 67);
+
+  --light-color-900: #fff;
+  --light-color-800: #979797;
+  --light-color-700: #ffffff93;
+  --light-color-600: #f2f1fa;
+  --light-color-500: #f9fafb;
+
+  --success-color-900: #03543f;
+  --success-color-800: #def7ec;
+
+  --error-color-900: #9b1c1c;
+  --error-color-800: #fbd5d5;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+/*? -------------------------------------------------------------------------- */
+/*?                                Global                                      */
+/*? -------------------------------------------------------------------------- */
