@@ -13,20 +13,20 @@ const config: Config = {
     extend: {
       colors: {
         main: {
-          900: "",
-          800: "",
+          900: "var(--main-color-900)",
+          800: "var(--main-color-800)",
         },
         prim: {
-          900: "",
-          800: "",
+          900: "var(--primary-color-900)",
+          800: "var(--primary-color-800)",
         },
         lit: {
-          900: "",
-          800: "",
+          900: "var(--light-color-900)",
+          800: "var(--light-color-800)",
         },
         drk: {
-          900: "",
-          800: "",
+          900: "var(--dark-color-900)",
+          800: "var(--dark-color-800)",
         },
       },
       backgroundImage: {

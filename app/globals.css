@@ -17,6 +17,8 @@
 
   --error-color-900: rgb(250, 67, 67);
 
+  --primary-color-900: #a06ad5;
+
   --light-color-900: #fff;
   --light-color-800: #979797;
   --light-color-700: #ffffff93;
@@ -33,3 +35,17 @@
 /*? -------------------------------------------------------------------------- */
 /*?                                Global                                      */
 /*? -------------------------------------------------------------------------- */
+
+/** ---------------------------- Over Write Slider --------------------------- */
+
+.swiper-pagination-bullet-active {
+  background-color: var(--main-color-900) !important;
+}
+.swiper-pagination-bullet {
+  width: 15px !important;
+  height: 15px !important;
+}
+.swiper-pagination {
+  width: 200px !important;
+}
+/** ---------------------------- Over Write Slider --------------------------- */
