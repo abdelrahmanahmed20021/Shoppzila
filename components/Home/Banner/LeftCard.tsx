@@ -7,10 +7,10 @@ import { Button } from "@nextui-org/react";
 export default function LeftCard({ src }: { src: string }) {
   return (
     <div className="w-full group relative  cursor-grab">
-      <div className="w-full h-[400px] rounded-xl relative overflow-hidden">
+      <div className="w-full h-[450px] rounded-xl relative overflow-hidden">
         <Image
           className=" group-hover:scale-[1.07]"
-          alt="slide-1"
+          alt={"Slide-Card"}
           src={src}
           placeholder="blur"
           quality={100}
