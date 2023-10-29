@@ -16,7 +16,7 @@ import {
   NavbarMenuToggle,
 } from "@nextui-org/react";
 
-import Cart from "./Cart";
+import Cart from "./Cart/Cart";
 import Logo from "./Logo";
 import { routes } from "./routes";
 

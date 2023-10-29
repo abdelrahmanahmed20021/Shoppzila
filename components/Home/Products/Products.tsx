@@ -1,6 +1,9 @@
 "use client";
 import React from "react";
 
+//@ts-ignore
+import { Fade } from "react-reveal";
+
 import Title from "@/components/Global/Title";
 import { useGetter } from "@/hooks/api";
 import { PRODUCTS_GETTER } from "@/hooks/keys";
@@ -31,7 +34,9 @@ export default function Products() {
       {!isLoading && (
         <Row>
           {data.map((element: any, index: number) => (
-            <Card key={index} {...element} index={++index} />
+            <Fade key={index} bottom delay={100 * index}>
+              <Card {...element} index={++index} />
+            </Fade>
           ))}
         </Row>
       )}

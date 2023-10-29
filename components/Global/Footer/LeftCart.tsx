@@ -9,10 +9,10 @@ import { Button } from "@nextui-org/react";
 
 export default function LeftCart() {
   const icons = [
-    <BiLogoFacebook size="20px" />,
-    <FaXTwitter size="20px" />,
-    <AiFillInstagram size="20px" />,
-    <PiTelegramLogo size="20px" />,
+    <BiLogoFacebook size="20px" key={1} />,
+    <FaXTwitter size="20px" key={2} />,
+    <AiFillInstagram size="20px" key={3} />,
+    <PiTelegramLogo size="20px" key={4} />,
   ];
   return (
     <div className="flex flex-col gap-[15px] text-lit-800">

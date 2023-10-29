@@ -1,4 +1,7 @@
 "use client";
+//@ts-ignore
+import { Fade } from "react-reveal";
+
 import Loader from "@/components/Global/Loader";
 import Title from "@/components/Global/Title";
 import { useGetter } from "@/hooks/api";
@@ -22,7 +25,9 @@ export default function Box() {
             .map((element, index) => <Loader key={index} />)}
         {!isLoading &&
           data.map((element: any, index: number) => (
-            <Card {...element} key={index} />
+            <Fade key={index} top delay={200 * index}>
+              <Card {...element} />
+            </Fade>
           ))}
       </div>
     </div>
