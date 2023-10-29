@@ -10,7 +10,7 @@ export default function Links({
   title: string;
 }) {
   return (
-    <div className="text-lit-800 flex flex-col gap-4">
+    <div className="text-lit-800 flex flex-col   gap-4">
       <h5 className="text-[1.5rem] font-[600]">{title}</h5>
       <div className="flex flex-col gap-3 ">
         {list.map((link, index) => (

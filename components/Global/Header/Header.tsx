@@ -1,12 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import { cn } from "@/libs/cn";
 import {
+  Button,
   Navbar,
   NavbarBrand,
   NavbarContent,
@@ -22,8 +22,11 @@ import { routes } from "./routes";
 
 export default function Header() {
   const path = usePathname();
+  const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <Navbar
+      isMenuOpen={isOpen}
       className="shadow-sm "
       classNames={{
         wrapper: "lg:max-w-[75%] md:max-w-[100%]",
@@ -31,8 +34,12 @@ export default function Header() {
       isBlurred
       maxWidth="full"
     >
-      <NavbarContent className="lg:hidden" justify="center">
-        <NavbarMenuToggle />
+      <NavbarContent
+        onClick={() => setIsOpen(!isOpen)}
+        className="lg:hidden"
+        justify="center"
+      >
+        <NavbarMenuToggle onClick={() => setIsOpen(!isOpen)} />
       </NavbarContent>
 
       <NavbarContent className="w-full md:flex-1" justify="center">
@@ -47,15 +54,16 @@ export default function Header() {
       >
         {routes.map((link) => (
           <NavbarItem isActive={link.path == path} key={link.id}>
-            <Link
+            <Button
+              onClick={() => router.push(link.path)}
+              variant="bordered"
               className={cn(
-                "text-[16px] font-[600]",
+                "text-[16px] border-[0] font-[600]",
                 link.path == path && "text-main-900"
               )}
-              href={link.path}
             >
               {link.name}
-            </Link>
+            </Button>
           </NavbarItem>
         ))}
       </NavbarContent>
@@ -66,15 +74,23 @@ export default function Header() {
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarMenu>
+      <NavbarMenu className="pt-[30px]">
         {routes.map((link, index) => (
           <NavbarMenuItem key={`${link}-${index}`}>
-            <Link
-              className={cn("w-full", link.path == path && "text-main-900")}
-              href={link.path}
+            <Button
+              onClick={() => {
+                router.push(link.path);
+                setIsOpen(!isOpen);
+              }}
+              variant="bordered"
+              size="lg"
+              className={cn(
+                "text-[16px] border-[0] font-[600] w-full justify-start",
+                link.path == path && "text-lit-900 bg-main-900"
+              )}
             >
               {link.name}
-            </Link>
+            </Button>
           </NavbarMenuItem>
         ))}
       </NavbarMenu>

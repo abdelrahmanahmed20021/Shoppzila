@@ -1,6 +1,7 @@
 import React from "react";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { BiSolidCartAdd } from "react-icons/bi";
 import { GoSearch } from "react-icons/go";
 
@@ -11,12 +12,15 @@ export default function Card({
   subSrc,
   price,
   name,
+  index,
 }: {
   src: string;
   subSrc: string;
   price: string;
   name: string;
+  index?: number;
 }) {
+  const router = useRouter();
   return (
     <div className="relative group">
       <Button
@@ -64,7 +68,10 @@ export default function Card({
           style={{ transition: "all ease .5s" }}
           className="bottom-[-100px] absolute group-hover:opacity-[1] bg-lit-900 rounded-tl-[20px]   p-5 group-hover:bottom-[-20px] opacity-0 right-[0px]"
         >
-          <Button className="min-w-[40px]  bg-drk-900  h-[40px] text-lit-900 shadow-small rounded-[40px] p-0">
+          <Button
+            onClick={() => router.push(`/cart/${index}`)}
+            className="min-w-[40px]  bg-drk-900  h-[40px] text-lit-900 shadow-small rounded-[40px] p-0"
+          >
             <BiSolidCartAdd size="18px" />
           </Button>
         </div>

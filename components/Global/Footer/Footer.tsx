@@ -21,14 +21,14 @@ export default function Footer() {
 
   return (
     <footer
-      className="bg-drk-900 w-full h-[400px] flex flex-col relative mt-[50px] "
+      className="bg-drk-900 w-full  flex flex-col relative mt-[50px] px-[40px]"
       style={{
         boxShadow: "1px 1px 10px 1000px var(--dark-color-900)",
         clipPath: "inset(0px -100% 0px -100%)",
       }}
     >
       <Title content="" />
-      <div className="flex   justify-between items-start w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-[50px] lg:gap-0  justify-between items-start w-full">
         <LeftCart />
         {links.map((link, index) => (
           <Links list={link} key={index} title={title[index]} />
@@ -36,8 +36,10 @@ export default function Footer() {
 
         <RightCard />
       </div>
-      <div className=" w-full h-[80px] border-t-[1px] text-lit-800 items-center mt-10 flex justify-between">
-        <div>© 2023 Miniture All rights reserved. Designed by Novaworks</div>
+      <div className=" w-full bg-drk-900  flex-wrap gap-[30px] justify-center py-10 border-t-[1px] text-lit-800 items-center mt-10 flex lg:justify-between">
+        <div className="text-center lg:text-left">
+          © 2023 Miniture All rights reserved. Designed by Abdelrahman Ahmed
+        </div>
         <Image
           src={
             "https://miniture.novaworks.net/wp-content/uploads/2023/10/payment_icon.svg"
