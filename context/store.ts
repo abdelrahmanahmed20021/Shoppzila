@@ -1,7 +1,13 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore } from "@reduxjs/toolkit";
+
+import appendProduct from "./futures/appendProduct";
+import OrderInfo from "./futures/orderInfo";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    OrderInfo,
+    appendProduct,
+  },
   devTools: process.env.NODE_ENV !== "production",
 });
 

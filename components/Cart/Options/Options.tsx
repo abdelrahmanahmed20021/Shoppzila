@@ -1,11 +1,14 @@
 "use client";
-import React from "react";
+import React from 'react';
 
-import Card from "@/components/Global/Card";
-import Loader from "@/components/Global/Loader";
-import Row from "@/components/Global/Row";
-import { useGetter } from "@/hooks/api";
-import { PRODUCTS_GETTER_SUB } from "@/hooks/keys";
+//@ts-ignore
+import { Fade } from 'react-reveal';
+
+import Card from '@/components/Global/Card';
+import Loader from '@/components/Global/Loader';
+import Row from '@/components/Global/Row';
+import { useGetter } from '@/hooks/api';
+import { PRODUCTS_GETTER_SUB } from '@/hooks/keys';
 
 export default function Options() {
   const { data, isLoading } = useGetter({
@@ -29,7 +32,9 @@ export default function Options() {
       {!isLoading && (
         <Row>
           {data.map((element: any, index: number) => (
-            <Card key={index} {...element} index={++index} />
+            <Fade key={index} bottom delay={100 * index}>
+              <Card key={index} {...element} index={++index} />
+            </Fade>
           ))}
         </Row>
       )}

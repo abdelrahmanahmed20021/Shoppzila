@@ -1,5 +1,8 @@
 import { BiSolidCart } from "react-icons/bi";
 
+import { appendProductType } from "@/context/types/appendProductType";
+import { useAppSelector } from "@/hooks/redux";
+import noProductImage from "@/public/assets/no-product.png";
 import {
   Badge,
   Button,
@@ -13,15 +16,16 @@ import {
   useDisclosure,
 } from "@nextui-org/react";
 
+import BG from "../../BG";
 import Card from "./Card";
 
 export default function Cart() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-
+  const products = useAppSelector((state) => state.appendProduct);
   return (
     <>
       <Badge
-        content="2"
+        content={products.length}
         shape="circle"
         color="warning"
         classNames={{
@@ -47,7 +51,7 @@ export default function Cart() {
       >
         <ModalContent
           style={{ margin: "0" }}
-          className="right-[0] absolute h-full  rounded-none py-6 "
+          className="right-[0] absolute top-0 h-full  rounded-none md:py-6 "
         >
           {(onClose) => (
             <>
@@ -55,18 +59,18 @@ export default function Cart() {
                 Shopping Cart
               </ModalHeader>
               <ModalBody className="flex flex-col justify-between">
-                <ScrollShadow className="h-[600px]">
-                  <Card src="https://miniture.novaworks.net/wp-content/uploads/2023/10/f_p_02_1-1000x1000.jpg" />
-                  <Card src="https://miniture.novaworks.net/wp-content/uploads/2023/10/f_p_02_1-1000x1000.jpg" />
-                  <Card src="https://miniture.novaworks.net/wp-content/uploads/2023/10/f_p_02_1-1000x1000.jpg" />
-                  <Card src="https://miniture.novaworks.net/wp-content/uploads/2023/10/f_p_02_1-1000x1000.jpg" />
-                  <Card src="https://miniture.novaworks.net/wp-content/uploads/2023/10/f_p_02_1-1000x1000.jpg" />
-                  <Card src="https://miniture.novaworks.net/wp-content/uploads/2023/10/f_p_02_1-1000x1000.jpg" />
-                  <Card src="https://miniture.novaworks.net/wp-content/uploads/2023/10/f_p_02_1-1000x1000.jpg" />
-                  <Card src="https://miniture.novaworks.net/wp-content/uploads/2023/10/f_p_02_1-1000x1000.jpg" />
-                  <Card src="https://miniture.novaworks.net/wp-content/uploads/2023/10/f_p_02_1-1000x1000.jpg" />
-                  <Card src="https://miniture.novaworks.net/wp-content/uploads/2023/10/f_p_02_1-1000x1000.jpg" />
-                  <Card src="https://miniture.novaworks.net/wp-content/uploads/2023/10/f_p_02_1-1000x1000.jpg" />
+                <ScrollShadow className="h-[400px] md:h-[600px]">
+                  {products.length > 0 &&
+                    products.map(
+                      (product: appendProductType, index: number) => (
+                        <Card {...product} key={index} />
+                      )
+                    )}
+                  {products.length == 0 && (
+                    <div className="relative flex h-full justify-center items-center">
+                      <BG src={noProductImage.src} />
+                    </div>
+                  )}
                 </ScrollShadow>
                 <div className="flex flex-col gap-[20px] px-5">
                   <div className="flex text-[1.2rem] font-[600] justify-between items-center">
