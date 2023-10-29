@@ -1,6 +1,7 @@
 import { BiSolidCart } from "react-icons/bi";
 
 import { appendProductType } from "@/context/types/appendProductType";
+import { formatTotalPrice } from "@/func/CalcPrice";
 import { useAppSelector } from "@/hooks/redux";
 import noProductImage from "@/public/assets/no-product.png";
 import {
@@ -77,7 +78,7 @@ export default function Cart() {
                     <div>Sub Total : </div>
                     <div>
                       <span>$</span>
-                      <bdi>11,43,3.00</bdi>
+                      <bdi>{formatTotalPrice([64.2, 212.35, 454.32])}</bdi>
                     </div>
                   </div>
                   <Divider />

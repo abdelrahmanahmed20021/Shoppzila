@@ -16,6 +16,7 @@ export default function Card({
   size,
   count,
   id,
+  price,
 }: {
   src: string;
   name: string;
@@ -23,6 +24,7 @@ export default function Card({
   count: number;
   color: string;
   id: string | string[];
+  price: number;
 }) {
   const dispatch = useAppDispatch();
   const data = useAppSelector((state) => state.appendProduct);
@@ -76,11 +78,11 @@ export default function Card({
           {size}
         </div>
         <div className="text-[14px]">
-          <span className="text-main-900">Count :</span> {count} x $299.00
+          <span className="text-main-900">Count :</span> {count} x {price}$
         </div>
       </div>
       <Button
-        className="absolute bottom-0 md:top-0 right-[-20px] md:right-0"
+        className="absolute bottom-0 right-[-20px] md:right-0"
         variant="light"
         color="danger"
         onClick={deleteProduct}
