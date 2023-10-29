@@ -1,0 +1,107 @@
+import { BiSolidCart } from "react-icons/bi";
+
+import {
+  Badge,
+  Button,
+  Divider,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ScrollShadow,
+  useDisclosure,
+} from "@nextui-org/react";
+
+import Card from "./Card";
+
+export default function Cart() {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
+  return (
+    <>
+      <Badge
+        content="2"
+        shape="circle"
+        color="warning"
+        classNames={{
+          badge: "text-lit-900",
+        }}
+      >
+        <Button
+          onClick={onOpen}
+          radius="full"
+          isIconOnly
+          aria-label="more than 99 notifications"
+          variant="light"
+          className="text-prim-900"
+        >
+          <BiSolidCart size={24} />
+        </Button>
+      </Badge>
+      <Modal
+        backdrop={"blur"}
+        isOpen={isOpen}
+        onOpenChange={onOpenChange}
+        closeButton={<div></div>}
+      >
+        <ModalContent
+          style={{ margin: "0" }}
+          className="right-[0] absolute h-full  rounded-none py-6 "
+        >
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-1">
+                Shopping Cart
+              </ModalHeader>
+              <ModalBody className="flex flex-col justify-between">
+                <ScrollShadow className="h-[600px]">
+                  <Card src="https://miniture.novaworks.net/wp-content/uploads/2023/10/f_p_02_1-1000x1000.jpg" />
+                  <Card src="https://miniture.novaworks.net/wp-content/uploads/2023/10/f_p_02_1-1000x1000.jpg" />
+                  <Card src="https://miniture.novaworks.net/wp-content/uploads/2023/10/f_p_02_1-1000x1000.jpg" />
+                  <Card src="https://miniture.novaworks.net/wp-content/uploads/2023/10/f_p_02_1-1000x1000.jpg" />
+                  <Card src="https://miniture.novaworks.net/wp-content/uploads/2023/10/f_p_02_1-1000x1000.jpg" />
+                  <Card src="https://miniture.novaworks.net/wp-content/uploads/2023/10/f_p_02_1-1000x1000.jpg" />
+                  <Card src="https://miniture.novaworks.net/wp-content/uploads/2023/10/f_p_02_1-1000x1000.jpg" />
+                  <Card src="https://miniture.novaworks.net/wp-content/uploads/2023/10/f_p_02_1-1000x1000.jpg" />
+                  <Card src="https://miniture.novaworks.net/wp-content/uploads/2023/10/f_p_02_1-1000x1000.jpg" />
+                  <Card src="https://miniture.novaworks.net/wp-content/uploads/2023/10/f_p_02_1-1000x1000.jpg" />
+                  <Card src="https://miniture.novaworks.net/wp-content/uploads/2023/10/f_p_02_1-1000x1000.jpg" />
+                </ScrollShadow>
+                <div className="flex flex-col gap-[20px] px-5">
+                  <div className="flex text-[1.2rem] font-[600] justify-between items-center">
+                    <div>Sub Total : </div>
+                    <div>
+                      <span>$</span>
+                      <bdi>11,43,3.00</bdi>
+                    </div>
+                  </div>
+                  <Divider />
+                </div>
+              </ModalBody>
+              <ModalFooter className="flex justify-between mt-[50px]">
+                <Button
+                  variant="bordered"
+                  size="lg"
+                  onPress={onClose}
+                  className="text-lit-900 rounded-md bg-prim-900 border-prim-900 hover:bg-transparent hover:text-prim-900"
+                >
+                  Close
+                </Button>
+                <Button
+                  size="lg"
+                  variant="bordered"
+                  color="warning"
+                  className="text-lit-900 flex-1  rounded-md bg-main-900 hover:bg-transparent hover:text-main-900"
+                  onPress={onClose}
+                >
+                  Checkout
+                </Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
+    </>
+  );
+}
