@@ -4,6 +4,7 @@ import React, { useState } from "react";
 
 import { usePathname, useRouter } from "next/navigation";
 
+import { ReduxProvider } from "@/components/Providers/ReduxProvider";
 import { cn } from "@/libs/cn";
 import {
   Button,
@@ -70,7 +71,9 @@ export default function Header() {
 
       <NavbarContent justify="end">
         <NavbarItem className="flex">
-          <Cart />
+          <ReduxProvider>
+            <Cart />
+          </ReduxProvider>
         </NavbarItem>
       </NavbarContent>
 
