@@ -1,3 +1,4 @@
+import Footer from "../Global/Footer/Footer";
 import AdsBanner from "./AdsBanner/AdsBanner";
 import Banner from "./Banner/Banner";
 import Box from "./Box/Box";
@@ -14,6 +15,7 @@ export default function Home() {
       <Box />
       <AdsBanner />
       <Futures />
+      <Footer />
     </>
   );
 }
