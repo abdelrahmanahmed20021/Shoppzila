@@ -30,6 +30,7 @@ export default function RightCard() {
       clearInterval(activeTimer);
     };
   }, []);
+
   return (
     <div className="flex-1  rounded-xl relative">
       <BG
@@ -50,7 +51,7 @@ export default function RightCard() {
           alt="bag-img"
           className="font-[700] text-[3rem]  leading-[42px]"
         />
-        {timer.days != 0 && (
+        {timer.seconds != 0 && (
           <div className="flex gap-[10px]">
             {Object.keys(timer).map((key, index) => (
               <Button
@@ -67,7 +68,7 @@ export default function RightCard() {
             ))}
           </div>
         )}
-        {timer.days == 0 && <Spinner />}
+        {timer.seconds == 0 && <Spinner />}
         <Button
           className="text-drk-900 w-max text-[16px] font-[600] px-[20px]"
           radius="full"

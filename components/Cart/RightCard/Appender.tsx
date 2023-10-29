@@ -96,6 +96,7 @@ export default function Appender() {
         count: amount,
         size: size,
         src: data[0].src,
+        price: data[0].price,
       })
     );
 

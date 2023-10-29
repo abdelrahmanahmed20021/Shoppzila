@@ -5,4 +5,5 @@ export type appendProductType = {
   color: string;
   count: number;
   src: string;
+  price: number;
 };
