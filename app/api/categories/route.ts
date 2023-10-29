@@ -1,6 +1,6 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export const GET = (req: NextResponse, res: NextResponse) => {
+export const GET = (req: NextRequest, res: NextResponse) => {
   const data = [
     {
       title: "Jackets & Coat",

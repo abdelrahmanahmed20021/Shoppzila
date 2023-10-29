@@ -17,7 +17,7 @@ export default function Products() {
   });
 
   return (
-    <div className="w-full flex flex-col justify-center items-center sm:items-start">
+    <div className="w-full flex flex-col justify-center items-center sm:items-start ">
       <Title content="Featured Products" />
       {isLoading && (
         <Row>

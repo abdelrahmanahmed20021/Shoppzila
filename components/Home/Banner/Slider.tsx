@@ -29,6 +29,7 @@ export default function Slider() {
           .fill(0)
           .map((element, index) => (
             <SwiperSlide key={index}>
+              {/*  @ts-ignore  */}
               <LeftCard
                 src={`https://miniture.novaworks.net/wp-content/uploads/2023/10/m8_slide_0${
                   index + 1
