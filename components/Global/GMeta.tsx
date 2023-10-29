@@ -28,6 +28,48 @@ export default function GMeta({
       ) : (
         <meta name="keywords" content={keys} />
       )}
+      {/* HTML Meta Tags */}
+      <title>
+        Shoppzila: Your Ultimate Shopping Destination for Quality and
+        Convenience
+      </title>
+      <meta
+        name="description"
+        content="At Shoppzila, we're more than just a shopping website; we're your go-to haven for all things fashion, electronics, home essentials, and more. With an extensive range of products, seamless navigation, and a commitment to delivering exceptional customer experiences, Shoppzila is your one-stop-shop for all your needs."
+      />
+
+      {/* Facebook Meta Tags */}
+      <meta property="og:url" content="https://shoppzila.vercel.app/" />
+      <meta property="og:type" content="website" />
+      <meta
+        property="og:title"
+        content="Shoppzila: Your Ultimate Shopping Destination for Quality and Convenience"
+      />
+      <meta
+        property="og:description"
+        content="At Shoppzila, we're more than just a shopping website; we're your go-to haven for all things fashion, electronics, home essentials, and more. With an extensive range of products, seamless navigation, and a commitment to delivering exceptional customer experiences, Shoppzila is your one-stop-shop for all your needs."
+      />
+      <meta
+        property="og:image"
+        content="https://builtin.com/sites/www.builtin.com/files/styles/og/public/2022-06/ecommerce-companies.png"
+      />
+
+      {/* Twitter Meta Tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta property="twitter:domain" content="shoppzila.vercel.app" />
+      <meta property="twitter:url" content="https://shoppzila.vercel.app/" />
+      <meta
+        name="twitter:title"
+        content="Shoppzila: Your Ultimate Shopping Destination for Quality and Convenience"
+      />
+      <meta
+        name="twitter:description"
+        content="At Shoppzila, we're more than just a shopping website; we're your go-to haven for all things fashion, electronics, home essentials, and more. With an extensive range of products, seamless navigation, and a commitment to delivering exceptional customer experiences, Shoppzila is your one-stop-shop for all your needs."
+      />
+      <meta
+        name="twitter:image"
+        content="https://builtin.com/sites/www.builtin.com/files/styles/og/public/2022-06/ecommerce-companies.png"
+      />
       <meta name="robots" content="index, follow" />
       <meta name="author" content="Shoppzila" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
