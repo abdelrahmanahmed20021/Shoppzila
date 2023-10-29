@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Tajawal } from "next/font/google";
 
+import Footer from "@/components/Global/Footer/Footer";
 import GMeta from "@/components/Global/GMeta";
 import Header from "@/components/Global/Header/Header";
 import Container from "@/components/Providers/Container";
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body className={TJ.className}>
         <Header />
         <Container>{children}</Container>
+        <Footer />
       </body>
     </html>
   );

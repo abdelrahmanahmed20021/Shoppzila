@@ -13,15 +13,18 @@ export const useGetter = ({
   key,
   timer,
   reFaildTime,
+  cashing,
 }: {
   endPoint: string;
   key: string;
   timer?: number;
   reFaildTime?: number;
+  cashing?: number;
 }) =>
   useQuery({
     queryKey: [key],
     staleTime: timer || Infinity,
+    cacheTime: cashing || 3600,
     retry: reFaildTime,
     queryFn: async () => {
       const req = await useAxios.get(endPoint);
