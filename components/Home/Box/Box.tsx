@@ -25,7 +25,7 @@ export default function Box() {
             .map((element, index) => <Loader key={index} />)}
         {!isLoading &&
           data.map((element: any, index: number) => (
-            <Fade key={index} top delay={200 * index}>
+            <Fade key={index} bottom delay={200 * index}>
               <Card {...element} />
             </Fade>
           ))}

@@ -7,8 +7,3 @@ export function formatTotalPrice(prices: number[]) {
 
   return formattedTotalPrice;
 }
-
-// Example usage:
-const prices = [123.45, 67.89, 341.89];
-const totalFormattedPrice = formatTotalPrice(prices);
-console.log(totalFormattedPrice);
