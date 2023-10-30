@@ -17,6 +17,7 @@ export default function Card({
   count,
   id,
   price,
+  uid,
 }: {
   src: string;
   name: string;
@@ -25,19 +26,15 @@ export default function Card({
   color: string;
   id: string | string[];
   price: number;
+  uid: string;
 }) {
   const dispatch = useAppDispatch();
   const data = useAppSelector((state) => state.appendProduct);
 
   const deleteProduct = () => {
-    const newData: appendProductType[] = data.filter((product) => {
-      if (product.id == id) {
-        return product.color != color;
-      }
-      if (product.id != id) {
-        return product.id != id;
-      }
-    });
+    const newData: appendProductType[] = data.filter(
+      (product: appendProductType) => product.uid != uid
+    );
     console.log(newData);
 
     Swal.fire({
