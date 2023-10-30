@@ -14,7 +14,7 @@ export default function AdsBanner() {
       <Title content="" />
 
       <div className="flex w-full gap-[30px] lg:p-5 flex-col lg:flex-row">
-        <Fade right delay={100}>
+        <Fade bottom delay={100}>
           <div className="relative w-full">
             <Card
               title="Elegance in Knits"
@@ -22,7 +22,7 @@ export default function AdsBanner() {
             />
           </div>
         </Fade>
-        <Fade left delay={500}>
+        <Fade bottom delay={500}>
           <div className="relative w-full">
             <Card
               title="Elegance in Carryalls"

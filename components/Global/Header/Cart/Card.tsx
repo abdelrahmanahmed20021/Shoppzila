@@ -47,7 +47,7 @@ export default function Card({
     }).then((result) => {
       if (result.isConfirmed) {
         dispatch(delProducts(newData));
-        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        Swal.fire("Deleted!", "Product has been deleted.", "success");
       }
     });
   };
