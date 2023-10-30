@@ -35,7 +35,6 @@ export default function Card({
     const newData: appendProductType[] = data.filter(
       (product: appendProductType) => product.uid != uid
     );
-    console.log(newData);
 
     Swal.fire({
       title: "Are you sure to delete this product?",
