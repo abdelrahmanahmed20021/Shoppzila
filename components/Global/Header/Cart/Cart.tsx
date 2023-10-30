@@ -1,9 +1,9 @@
-import { BiSolidCart } from "react-icons/bi";
+import { BiSolidCart } from 'react-icons/bi';
 
-import { appendProductType } from "@/context/types/appendProductType";
-import { formatTotalPrice } from "@/func/CalcPrice";
-import { useAppSelector } from "@/hooks/redux";
-import noProductImage from "@/public/assets/no-product.png";
+import { appendProductType } from '@/context/types/appendProductType';
+import { formatTotalPrice } from '@/func/CalcPrice';
+import { useAppSelector } from '@/hooks/redux';
+import noProductImage from '@/public/assets/no-product.png';
 import {
   Badge,
   Button,
@@ -15,10 +15,10 @@ import {
   ModalHeader,
   ScrollShadow,
   useDisclosure,
-} from "@nextui-org/react";
+} from '@nextui-org/react';
 
-import BG from "../../BG";
-import Card from "./Card";
+import BG from '../../BG';
+import Card from './Card';
 
 export default function Cart() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -69,7 +69,7 @@ export default function Cart() {
                       )
                     )}
                   {products.length == 0 && (
-                    <div className="relative flex h-full justify-center items-center">
+                    <div className="relative flex w-full h-full justify-center items-center">
                       <BG src={noProductImage.src} />
                     </div>
                   )}
