@@ -34,7 +34,7 @@ export default function Products() {
       {!isLoading && (
         <Row>
           {data.map((element: any, index: number) => (
-            <Fade key={index} bottom delay={100 * index}>
+            <Fade key={index} top delay={100 * index}>
               <Card {...element} index={++index} />
             </Fade>
           ))}
