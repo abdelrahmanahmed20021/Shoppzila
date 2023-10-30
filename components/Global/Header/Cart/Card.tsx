@@ -30,9 +30,16 @@ export default function Card({
   const data = useAppSelector((state) => state.appendProduct);
 
   const deleteProduct = () => {
-    const newData: appendProductType[] = data.filter(
-      (product) => product.id != id
-    );
+    const newData: appendProductType[] = data.filter((product) => {
+      if (product.id == id) {
+        return product.color != color;
+      }
+      if (product.id != id) {
+        return product.id != id;
+      }
+    });
+    console.log(newData);
+
     Swal.fire({
       title: "Are you sure to delete this product?",
       text: "You won't be able to revert this!",

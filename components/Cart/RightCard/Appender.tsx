@@ -39,6 +39,13 @@ export default function Appender() {
   };
 
   useEffect(() => {
+    return () => {
+      setCount(0);
+      dispatch(resetInfo());
+    };
+  }, []);
+
+  useEffect(() => {
     dispatch(setInfo({ value: count, target: "count" }));
   }, [count]);
 
@@ -78,12 +85,14 @@ export default function Appender() {
       return;
     }
 
-    const result = products.filter((product) => product.id == id);
+    const result = products.filter(
+      (product) =>
+        product.id == id && product.size == size && product.color == color
+    );
 
     if (result.length > 0) {
-      warn("This product already exist");
-      setCount(0);
-      dispatch(resetInfo());
+      warn("This product already exist with this size and color");
+
       return;
     }
 
