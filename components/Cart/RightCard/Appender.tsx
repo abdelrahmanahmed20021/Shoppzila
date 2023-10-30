@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 
 import { useParams } from "next/navigation";
 import Swal from "sweetalert2";
+import { uid } from "uid";
 
 import { setProduct } from "@/context/futures/appendProduct";
 import { resetInfo, setInfo } from "@/context/futures/orderInfo";
@@ -100,6 +101,7 @@ export default function Appender() {
     dispatch(
       setProduct({
         id,
+        uid: uid(16),
         name: data[0].name,
         color: color,
         count: amount,
