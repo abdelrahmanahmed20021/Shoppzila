@@ -23,6 +23,7 @@ import Card from "./Card";
 export default function Cart() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const products = useAppSelector((state) => state.appendProduct);
+
   return (
     <>
       <Badge
@@ -78,7 +79,13 @@ export default function Cart() {
                     <div>Sub Total : </div>
                     <div>
                       <span>$</span>
-                      <bdi>{formatTotalPrice([64.2, 212.35, 454.32])}</bdi>
+                      <bdi>
+                        {formatTotalPrice(
+                          products.map(
+                            (product) => product.price * product.count
+                          )
+                        )}
+                      </bdi>
                     </div>
                   </div>
                   <Divider />
